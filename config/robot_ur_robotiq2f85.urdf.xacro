@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot_ur_robotiq2f85">
+    <xacro:arg name="initial_positions_file2" default="initial_positions.yaml" />
+
+    <!-- Import robot_ur_robotiq2f85 urdf file -->
+    <xacro:include filename="$(find ifl_air_arm_api_launch)/urdf/robot_ur_robotiq2f85.urdf.xacro" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="robot_ur_robotiq2f85.ros2_control.xacro" />
+
+
+    <xacro:robot_ur_robotiq2f85_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file2)"/>
+
+</robot>
